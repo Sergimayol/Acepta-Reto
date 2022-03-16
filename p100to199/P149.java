@@ -1,5 +1,3 @@
-package p100to199;
-
 import java.util.Scanner;
 
 /**
