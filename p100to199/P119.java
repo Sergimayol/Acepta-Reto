@@ -1,4 +1,3 @@
-package p100to199;
 
 import java.util.Scanner;
 
@@ -8,9 +7,6 @@ import java.util.Scanner;
  */
 public class P119 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         Scanner s;
         int lr, e, es;
