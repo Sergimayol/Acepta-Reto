@@ -18,7 +18,7 @@ public class P265b {
             sum = 0;
             char[] c = Integer.toString(nl).toCharArray();
             int l = c.length;
-            for (int i = 0; i < c.length; i++) {
+            for (int i = 0; i < l; i++) {
                 sum += (c[i] - '0') * (i + 1) * Math.pow(10, l - 1 - i);
             }
             System.out.println(sum);
