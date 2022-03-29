@@ -18,6 +18,5 @@ int main() {
 		}
 		cout << numUvas << '\n';
 	}
-
 	return 0;
 }
