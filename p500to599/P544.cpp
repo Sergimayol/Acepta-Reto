@@ -17,10 +17,14 @@ int main()
 			{
 				numUvas++;
 				if (valor > maximo)
+				{
 					maximo = valor;
+				}
 			}
 			else if (valor < maximo)
+			{
 				maximo = valor;
+			}
 		}
 		cout << numUvas << '\n';
 	}
