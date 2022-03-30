@@ -1,3 +1,4 @@
+package p500to599;
 
 import java.util.Scanner;
 

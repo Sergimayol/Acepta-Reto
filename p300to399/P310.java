@@ -1,4 +1,4 @@
-package javaapplication34;
+package p300to399;
 
 import java.util.ArrayList;
 import java.util.Scanner;
