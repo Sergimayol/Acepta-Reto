@@ -15,11 +15,6 @@ public class P464 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        new P464().start();
-    }
-
-    private void start() {
         final BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
         try {
             while (true) {
@@ -33,7 +28,8 @@ public class P464 {
                 for (int i = 0; i < n; i++) {
                     inp = r.readLine();
                     String total[] = inp.split(":");
-                    sec = (Integer.parseInt(total[0]) * 3600) + (Integer.parseInt(total[1]) * 60) + (Integer.parseInt(total[2]));
+                    sec = (Integer.parseInt(total[0]) * 3600) + (Integer.parseInt(total[1]) * 60)
+                            + (Integer.parseInt(total[2]));
                     arr[i] = sec;
                 }
                 int[] ogps = new int[n];
@@ -69,4 +65,5 @@ public class P464 {
         } catch (IOException ex) {
         }
     }
+
 }
