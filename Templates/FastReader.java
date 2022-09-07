@@ -5,7 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class CPFastReaderTemplate {
+public class FastReader {
 
     static final boolean stdin = true;
     static final String filename = "";

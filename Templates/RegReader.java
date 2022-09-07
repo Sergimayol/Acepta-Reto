@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
-public class CPReaderTemplate {
+public class RegReader {
     static final boolean stdin = true;
     static final String filename = "";
     static Reader in;
