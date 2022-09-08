@@ -1,4 +1,4 @@
-package Templates;
+package Classes;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -128,6 +128,28 @@ public class Mathematic {
         for (int i = 1; i <= n; i++)
             res *= i;
         return res;
+    }
+
+    // all factors of a number
+    static List<Integer> factors(int n) {
+        List<Integer> res = new ArrayList<>();
+        for (int i = 1; i * i <= n; i++) {
+            if (n % i == 0) {
+                res.add(i);
+                if (i * i != n)
+                    res.add(n / i);
+            }
+        }
+        return res;
+    }
+
+    // factor of a number
+    static void factor(int num) {
+        for (int i = 1; i <= num; i++) {
+            if (num % i == 0) {
+                System.out.print(i + " ");
+            }
+        }
     }
 
     // nCr

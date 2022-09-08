@@ -1,4 +1,4 @@
-package Templates;
+package Classes;
 
 import java.util.ArrayList;
 
