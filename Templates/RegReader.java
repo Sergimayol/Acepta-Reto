@@ -16,7 +16,7 @@ public class RegReader {
     static class Solver {
 
         // Solution to problem goes here
-        Solver() {
+        Solver() throws IOException {
 
         }
     }

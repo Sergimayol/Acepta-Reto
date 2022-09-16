@@ -15,7 +15,7 @@ public class FastReader {
     static class Solver {
 
         // Solution to problem goes here
-        Solver() {
+        Solver() throws IOException {
 
         }
     }
