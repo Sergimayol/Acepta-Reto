@@ -14,26 +14,24 @@ public class P622 {
     public static void main(String[] args) {
         Scanner r = new Scanner(System.in);
         int n, m, e, p;
-        try {
-            while (true) {
-                n = r.nextInt();
-                if (n == 0) {
-                    break;
-                }
-                m = 0;
-                for (int i = 0; i < n; i++) {
-                    m += r.nextInt();
-                }
-                e = r.nextInt();
-                p = e * (n + 1);
-                if (m > p || (m + 10) < p) {
-                    System.out.println("IMPOSIBLE");
-                } else {
-                    System.out.println(p - m);
-                }
+        while (true) {
+            n = r.nextInt();
+            if (n == 0) {
+                break;
             }
-        } catch (Exception ex) {
+            m = 0;
+            for (int i = 0; i < n; i++) {
+                m += r.nextInt();
+            }
+            e = r.nextInt();
+            p = e * (n + 1);
+            if (m > p || (m + 10) < p) {
+                System.out.println("IMPOSIBLE");
+            } else {
+                System.out.println(p - m);
+            }
         }
+        r.close();
     }
 
 }
