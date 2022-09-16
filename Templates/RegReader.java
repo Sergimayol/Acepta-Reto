@@ -2,6 +2,7 @@ package Templates;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.StringTokenizer;
@@ -36,8 +37,9 @@ public class RegReader {
         BufferedReader br;
         StringTokenizer st;
 
-        Reader() {
-            br = new BufferedReader(new InputStreamReader(System.in));
+        public Reader() {
+            br = new BufferedReader(
+                    new InputStreamReader(System.in));
         }
 
         Reader(String filename) throws Exception {
@@ -45,10 +47,11 @@ public class RegReader {
         }
 
         String next() {
-            while (st == null || !st.hasMoreTokens()) {
+            while (st == null || !st.hasMoreElements()) {
                 try {
                     st = new StringTokenizer(br.readLine());
-                } catch (Exception e) {
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
             return st.nextToken();
@@ -56,6 +59,28 @@ public class RegReader {
 
         int nextInt() {
             return Integer.parseInt(next());
+        }
+
+        long nextLong() {
+            return Long.parseLong(next());
+        }
+
+        double nextDouble() {
+            return Double.parseDouble(next());
+        }
+
+        String nextLine() {
+            String str = "";
+            try {
+                if (st.hasMoreTokens()) {
+                    str = st.nextToken("\n");
+                } else {
+                    str = br.readLine();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return str;
         }
     }
 
