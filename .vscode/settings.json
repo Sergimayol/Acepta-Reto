@@ -11,5 +11,8 @@
   },
   "[java]": {
     "editor.defaultFormatter": "redhat.java"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
   }
 }
