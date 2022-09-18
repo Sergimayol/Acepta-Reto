@@ -14,5 +14,14 @@
   },
   "[python]": {
     "editor.defaultFormatter": "ms-python.python"
-  }
+  },
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#1d262f",
+    "statusBar.foreground": "#ffffff"
+  },
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true
 }
