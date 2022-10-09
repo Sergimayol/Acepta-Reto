@@ -820,4 +820,190 @@ public class Mathematic {
             return req.isEmpty();
         }
     }
+
+    static class Vector {
+
+        private double x;
+        private double y;
+
+        public Vector(double x, double y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        public double getX() {
+            return x;
+        }
+
+        public double getY() {
+            return y;
+        }
+
+        public void setX(double x) {
+            this.x = x;
+        }
+
+        public void setY(double y) {
+            this.y = y;
+        }
+
+        public void add(Vector v) {
+            this.x += v.getX();
+            this.y += v.getY();
+        }
+
+        public void sub(Vector v) {
+            this.x -= v.getX();
+            this.y -= v.getY();
+        }
+
+        public void mult(double n) {
+            this.x *= n;
+            this.y *= n;
+        }
+
+        public void div(double n) {
+            this.x /= n;
+            this.y /= n;
+        }
+
+        public double mag() {
+            return Math.sqrt(x * x + y * y);
+        }
+
+        public void normalize() {
+            double m = mag();
+            if (m != 0) {
+                div(m);
+            }
+        }
+
+        public double heading() {
+            return Math.atan2(y, x);
+        }
+
+        public void limit(double max) {
+            if (mag() > max) {
+                normalize();
+                mult(max);
+            }
+        }
+
+        public void setMag(double n) {
+            normalize();
+            mult(n);
+        }
+
+        public void setHeading(double angle) {
+            double m = mag();
+            x = Math.cos(angle) * m;
+            y = Math.sin(angle) * m;
+        }
+
+        public void rotate(double angle) {
+            double newHeading = heading() + angle;
+            setHeading(newHeading);
+        }
+
+        public double dist(Vector v) {
+            double dx = x - v.getX();
+            double dy = y - v.getY();
+            return Math.sqrt(dx * dx + dy * dy);
+        }
+
+        public double angleBetween(Vector v) {
+            double dot = x * v.getX() + y * v.getY();
+            double v1mag = mag();
+            double v2mag = v.mag();
+            double amt = dot / (v1mag * v2mag);
+            return Math.acos(amt);
+        }
+
+        public Vector copy() {
+            return new Vector(x, y);
+        }
+
+        public void lerp(Vector v, double amt) {
+            x = x + (v.getX() - x) * amt;
+            y = y + (v.getY() - y) * amt;
+        }
+
+        public void reflect(Vector surface) {
+            surface.normalize();
+            surface.mult(2 * dot(surface));
+            sub(surface);
+        }
+
+        public double dot(Vector v) {
+            return x * v.getX() + y * v.getY();
+        }
+
+        public double cross(Vector v) {
+            return x * v.getY() - y * v.getX();
+        }
+
+        public Vector get() {
+            return new Vector(x, y);
+        }
+
+        public void set(Vector v) {
+            x = v.getX();
+            y = v.getY();
+        }
+
+        public boolean isParallel(Vector v) {
+            if (modulus() == 0 || v.modulus() == 0) {
+                return true;
+            }
+            if ((x == 0) != (v.x == 0) || (y == 0) != (v.y == 0)) {
+                return false;
+            }
+            double ratio = 0;
+            if (x != 0) {
+                ratio = v.x / x;
+            }
+            if (y != 0) {
+                if (ratio != 0) {
+                    if (v.y / y != ratio) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        public boolean isPerpendicular(Vector v) {
+            return dot(v) == 0;
+        }
+
+        public double modulus() {
+            return Math.sqrt(x * x + y * y);
+        }
+
+        public Vector mult(Vector v) {
+            return new Vector(x * v.getX(), y * v.getY());
+        }
+
+        public Vector div(Vector v) {
+            return new Vector(x / v.getX(), y / v.getY());
+        }
+
+        public Vector addVector(Vector v) {
+            return new Vector(x + v.getX(), y + v.getY());
+        }
+
+        public Vector subVector(Vector v) {
+            return new Vector(x - v.getX(), y - v.getY());
+        }
+
+        public Vector unitVector() {
+            double m = modulus();
+            return new Vector(x / m, y / m);
+        }
+
+        public double crossProduct(Vector v) {
+            return x * v.getY() - y * v.getX();
+        }
+    }
+
 }
