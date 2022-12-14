@@ -30,3 +30,10 @@ java ${1%.*}
 
 # Remove the class file
 rm ${1%.*}.class
+
+# Remove other class files
+# Get the path of the java file
+path=$(dirname $1)
+
+# Remove the class files
+rm $path/*.class
