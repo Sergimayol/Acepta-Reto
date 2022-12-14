@@ -23,6 +23,15 @@ public class Mathematic {
     static final BigInteger TWO = BigInteger.TWO;
     static final BigInteger THREE = BigInteger.TEN;
 
+    private static boolean checkIdentityMatrix(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++)
+            for (int j = 0; j < matrix[i].length; j++) {
+                if ((i == j && matrix[i][j] != 1) || (i != j && matrix[i][j] != 0))
+                    return false;
+            }
+        return true;
+    }
+
     // greatest common divisor
     public static int gcd(int a, int b) {
         if (a == 0)
