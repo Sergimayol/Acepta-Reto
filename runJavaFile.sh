@@ -37,3 +37,4 @@ path=$(dirname $1)
 
 # Remove the class files
 rm $path/*.class
+
