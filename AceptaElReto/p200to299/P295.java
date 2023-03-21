@@ -12,19 +12,30 @@ public class P295 {
 
     static class Solver {
 
+        private final int k = 31543;
+
         Solver() throws IOException {
             int n = -1;
             int m = -1;
-            double r = 0;
-            final int k = 31543;
             while (true) {
                 n = in.nextInt();
                 m = in.nextInt();
                 if (n == 0 && m == 0) {
                     break;
                 }
-                r = Math.pow(n, m);
-                out.println((int) r % k);
+                out.println(elevar(n, m));
+            }
+        }
+
+        private long elevar(long n, long m) {
+            if (m == 0) {
+                return 1;
+            }
+            long r = elevar(n, m / 2);
+            if (m % 2 == 0) {
+                return (r * r) % k;
+            } else {
+                return ((n % k) * r * r) % k;
             }
         }
 
