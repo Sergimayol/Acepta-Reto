@@ -28,15 +28,15 @@ public class P295 {
         }
 
         private long elevar(long n, long m) {
-            if (m == 0) {
-                return 1;
+            long r = 1;
+            while (m > 0) {
+                if (m % 2 == 1) {
+                    r = (r * n) % k;
+                }
+                n = (n * n) % k;
+                m /= 2;
             }
-            long r = elevar(n, m / 2);
-            if (m % 2 == 0) {
-                return (r * r) % k;
-            } else {
-                return ((n % k) * r * r) % k;
-            }
+            return r;
         }
 
     }
